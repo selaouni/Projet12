@@ -1,17 +1,27 @@
 from django.db import models
-
+from django.conf import settings
 # from six import python_2_unicode_compatible
-# @python_2_unicode_compatibl
+# @python_2_unicode_compatible
+
 
 class Support(models.Model):
-    support_id = models.IntegerField(blank=True)
+    support_id = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     contact = models.IntegerField(blank=True)
     first_name = models.fields.CharField(max_length=25)
     last_name = models.fields.CharField(max_length=25)
 
+
+class Sales(models.Model):
+    sales_id = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    contact = models.IntegerField(blank=True)
+    first_name = models.fields.CharField(max_length=25)
+    last_name = models.fields.CharField(max_length=25)
+
+
 class Event_status(models.Model):
     event_status_id = models.IntegerField(blank=True)
     Event_status = models.IntegerField(blank=True)
+
 
 class Client(models.Model):
     client_id = models.IntegerField(blank=True)
@@ -37,20 +47,16 @@ class Event(models.Model):
     event_date = models.DateTimeField(auto_now=True)
     notes = models.TextField(max_length=200, blank=True)
 
-class Sales(models.Model):
-    sales_id = models.IntegerField(blank=True)
-    contact = models.IntegerField(blank=True)
-    first_name = models.fields.CharField(max_length=25)
-    last_name = models.fields.CharField(max_length=25)
+
 class Contract(models.Model):
     contract_id = models.IntegerField(blank=True)
-    client = models.ForeignKey(to=Client, on_delete=models.CASCADE)
     Sales_contact = models.ForeignKey(to=Sales, on_delete=models.CASCADE)
+    client = models.ForeignKey(to=Client, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     status = models.BooleanField(blank=True)
     amount = models.FloatField(blank=True)
-    payment_due = models.DateTimeField(auto_now_add=True)
+    payment_due = models.DateTimeField(auto_now=True)
 
 
 
