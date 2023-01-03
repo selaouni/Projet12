@@ -70,3 +70,9 @@ Nota : les versions appliquées pour ce projet:
  - First version - 28/12/2022
 
 ## Acknowledgments (code inspiration): 
+- https://olivierlemoigne.com/posts/django-postgres/
+- https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-django?gclid=CjwKCAiAkrWdBhBkEiwAZ9cdcI07zMyqUJkmC1UZye-PofhFdt640FUvQji-5Fv3jWIQlqeSZOw8lhoCjsAQAvD_BwE
+- https://www.youtube.com/watch?v=HEV1PWycOuQ
+- https://www.enterprisedb.com/postgres-tutorials/how-create-postgresql-database-and-users-using-psql-and-pgadmin?gclid=CjwKCAiA-8SdBhBGEiwAWdgtcA0SaXwqY8RV_WGz-0D-XcimKinYOCH1NFITezF3lqhGpNiRb3MCnBoCGyIQAvD_BwE
+- https://docs.netbox.dev/en/stable/installation/1-postgresql/
+- https://pullanswer.com/questions/unable-to-create-the-django_migrations-table-during-installation
