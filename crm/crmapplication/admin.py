@@ -17,7 +17,7 @@ class ClientAdmin(admin.ModelAdmin):
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('event_id', 'client', 'Support_contact', 'event_status', 'notes')
+    list_display = ('event_id', 'client', 'support_contact', 'event_status', 'notes')
     def active(self, obj):
         return obj.is_active == 1
 
@@ -33,7 +33,7 @@ class ContractAdmin(admin.ModelAdmin):
 
 
 class SupportAdmin(admin.ModelAdmin):
-    list_display = ('support_id', 'contact','first_name', 'last_name')
+    list_display = ('support_id', 'contact', 'first_name', 'last_name')
     def active(self, obj):
         return obj.is_active == 1
 
