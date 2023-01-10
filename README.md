@@ -76,3 +76,12 @@ Nota : les versions appliquées pour ce projet:
 - https://www.enterprisedb.com/postgres-tutorials/how-create-postgresql-database-and-users-using-psql-and-pgadmin?gclid=CjwKCAiA-8SdBhBGEiwAWdgtcA0SaXwqY8RV_WGz-0D-XcimKinYOCH1NFITezF3lqhGpNiRb3MCnBoCGyIQAvD_BwE
 - https://docs.netbox.dev/en/stable/installation/1-postgresql/
 - https://pullanswer.com/questions/unable-to-create-the-django_migrations-table-during-installation
+- https://www.django-rest-framework.org/api-guide/permissions/
+- https://docs.netbox.dev/en/stable/installation/1-postgresql/
+- https://stacklima.com/personnaliser-linterface-dadministration-de-django/
+- https://stackoverflow.com/questions/26906630/django-rest-framework-authentication-credentials-were-not-provided
+- https://python.doctor/page-django-orm-apprendre-base-donnees-database-queryset-modeles
+- https://testdriven.io/blog/built-in-permission-classes-drf/
+- https://www.django-rest-framework.org/api-guide/permissions/
+- https://stackoverflow.com/questions/24884245/django-rest-framework-wont-let-me-have-more-than-one-permission
+- https://learnbatta.com/blog/permissions-in-django-rest-framework-82/
