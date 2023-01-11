@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-# from rest_framework.permissions import IsAuthenticated
-# from api.permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import IsAuthenticated
+from .permissions import IsOwnerOrReadOnly, IsAdminUser,  IsManager, IsSales, IsSupport
 from django.db.models import Q
 
 
@@ -13,6 +13,9 @@ from .serializers import SalesSerializer, SupportSerializer
 
 class ClientViewset(ModelViewSet):
     # permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [(IsAdminUser | IsAuthenticated) & (IsSales | IsSupport)]
+
+
     serializer_class = ClientSerializer
 
     def get_queryset(self, *args, **kwargs):
@@ -46,7 +49,7 @@ class ClientViewset(ModelViewSet):
 
 
 class EventViewset(ModelViewSet):
-    # permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [(IsAdminUser | IsAuthenticated) & (IsSales | IsSupport)]
     serializer_class = EventSerializer
 
     def get_queryset(self, *args, **kwargs):
@@ -78,7 +81,8 @@ class EventViewset(ModelViewSet):
 
 
 class ContractViewset(ModelViewSet):
-    # permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [(IsAdminUser | IsAuthenticated) & (IsSales | IsSupport)]
+    # permission_classes = [And(Or(IsAdminUser, IsAuthenticated), IsOwnerOrReadOnly)]
     serializer_class = ContractSerializer
 
     def get_queryset(self, *args, **kwargs):
