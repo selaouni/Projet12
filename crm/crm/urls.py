@@ -17,22 +17,50 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from crmapplication.views import ClientViewset
 from rest_framework import routers
 
-# from crmapplication.views EventViewset, ContractViewset, SalesViewset, SupportViewset
-# from authentication.views import RegisterView, UserByProjectView
-# from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from authentication.views import RegisterView, UserByProjectView
+from rest_framework_simplejwt.views import TokenObtainPairView
 
+from crmapplication.views import EventViewset, ContractViewset
+from crmapplication.views import ClientViewset
 
-router = routers.SimpleRouter()
-router.register('client', ClientViewset, basename='client')
-router.register('event', ClientViewset, basename='event')
-router.register('contract', ClientViewset, basename='contract')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/', include(router.urls)),
-    ]
+    path('', include('authentication.urls')),
+    path('', include('crmapplication.urls')),
+
+ ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# from crmapplication.views SalesViewset, SupportViewset
+
+
+#
+#
+# router = routers.SimpleRouter()
+# router.register('client', ClientViewset, basename='client')
+# router.register('event', EventViewset, basename='event')
+# router.register('contract', ContractViewset, basename='contract')
+#
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('api/signup/', RegisterView.as_view()),
+#     path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+#     path('api-auth/', include('rest_framework.urls')),
+#     path('api/', include(router.urls)),
+#     ]
 
