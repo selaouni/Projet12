@@ -9,22 +9,30 @@ Développez une architecture back-end sécurisée en utilisant Django ORM
 Idriss Benjeloun
 
 ## Description:   
-Ce projet concerne le  developpement d'une API en utilisant Django REST.
+Ce projet concerne le  developpement d'une API  de suivi CRM utilisant le frameworke Django REST.
 
-les fonctionnalités du projet sont comme suit:
+L'application Django fournit :
+- un ensemble d’endpoints sécurisés pour l’API avec comme base de données PostgreSQL pour permettre 
+- les opérations CRUD (créer, lire, mettre à jour et supprimer) appliquées aux 
+divers objets CRM. 
+- Une interface front-end simple à l'aide du site d'administration Django, qui permet aux 
+utilisateurs autorisés de gérer l'application, d'accéder à l'ensemble des modèles et de vérifier 
+la configuration de la base de données
 
-- Il s'agit d'une application de suivi CRM
-
-Le type des champs est indiqué dans un modèle Django. 
-1. User : 
-3. Event : 
-4. Contract : 
-5. Sales: 
-6. Support:
+Modèls :
+1. User 
+3. Event 
+4. Contract 
+5. Sales
+6. Support
+7. Event_status
 
 ## Technologies utilisées:
 - framework Django REST;
-- PostgreSQL comme gestionnaire de base de données ,
+- python : 3.10.5
+- PostgreSQL 15 comme gestionnaire de base de données ,
+- postman a été utilisé pour tester les requêtes de l'API 
+- Lucidchart pour la création du Diagramme entité-relation(ERD)
 
  
 
@@ -52,19 +60,15 @@ Remarque: Assurez-vous que votre version de Python est l'une de celles prises
 en charge par la dernière version de Django :
 https://docs.djangoproject.com/en/4.1/faq/install/#faq-python-version-support
 
-Nota : les versions appliquées pour ce projet: 
-    
-    - python : 3.10.5
-    - Django : 4.1.1
+Nota : 
     - IDE utilisé: pycharm V2022.2.1 (Community Edition)
-    - postman a été utilisé pour tester les requêtes de l'API
-    - Lucidchart pour la création du Diagramme entité-relation
+
 
 ## Historique des Versions:    
 
  *Principales versions sous Github*
 
- - PEP8 verification - 19/11/2022
+ - PEP8 verification - --/01/2023
  - update
 
  - First version - 28/12/2022
@@ -85,3 +89,6 @@ Nota : les versions appliquées pour ce projet:
 - https://www.django-rest-framework.org/api-guide/permissions/
 - https://stackoverflow.com/questions/24884245/django-rest-framework-wont-let-me-have-more-than-one-permission
 - https://learnbatta.com/blog/permissions-in-django-rest-framework-82/
+- https://www.revsys.com/tidbits/tip-about-drf-permissions/
+- https://github.com/encode/django-rest-framework/pull/5753
+- https://medium.com/swlh/build-your-first-rest-api-with-django-rest-framework-e394e39a482c
