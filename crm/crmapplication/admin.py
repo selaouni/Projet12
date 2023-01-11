@@ -9,7 +9,7 @@ from .models import Event_status
 
 
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('client_id', 'first_name', 'last_name', 'email', 'company_name', 'sales_contact')
+    list_display = ('client_id', 'first_name', 'last_name', 'email', 'company_name', 'sales_contact', 'author_user_id')
     def active(self, obj):
         return obj.is_active == 1
 
@@ -17,7 +17,7 @@ class ClientAdmin(admin.ModelAdmin):
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('event_id', 'client', 'support_contact', 'event_status', 'notes')
+    list_display = ('event_id', 'client', 'support_contact', 'event_status', 'notes', 'author_user_id')
     def active(self, obj):
         return obj.is_active == 1
 
@@ -25,7 +25,7 @@ class EventAdmin(admin.ModelAdmin):
 
 
 class ContractAdmin(admin.ModelAdmin):
-    list_display = ('contract_id', 'sales_contact', 'client', 'status', 'payment_due')
+    list_display = ('contract_id', 'sales_contact', 'client', 'status', 'payment_due', 'author_user_id')
     def active(self, obj):
         return obj.is_active == 1
 
