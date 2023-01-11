@@ -48,6 +48,9 @@ class Client(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     sales_contact = models.ForeignKey(to=Sales, on_delete=models.CASCADE)
+    author_user_id = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                                       on_delete=models.CASCADE, related_name="author_client",
+                                       blank=False, null=True)
 
 
 
@@ -61,6 +64,9 @@ class Event(models.Model):
     attendees = models.IntegerField(blank=True)
     event_date = models.DateTimeField(auto_now=True)
     notes = models.TextField(max_length=200, blank=True)
+    author_user_id = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                                       on_delete=models.CASCADE, related_name="author_event",
+                                       blank=False, null=True)
 
     # class Meta:
     #     db_table = 'event'
@@ -76,6 +82,9 @@ class Contract(models.Model):
     status = models.BooleanField(blank=True)
     amount = models.FloatField(blank=True)
     payment_due = models.DateTimeField(auto_now=True)
+    author_user_id = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                                       on_delete=models.CASCADE, related_name="author_contract",
+                                       blank=False, null=True)
 
 
 
