@@ -92,3 +92,9 @@ Nota :
 - https://www.revsys.com/tidbits/tip-about-drf-permissions/
 - https://github.com/encode/django-rest-framework/pull/5753
 - https://medium.com/swlh/build-your-first-rest-api-with-django-rest-framework-e394e39a482c
+- https://dev.to/ericlecodeur/votre-premiere-introduction-a-django-rest-framework-j8k
+- https://www.youtube.com/watch?v=unFGJhIvHU4
+- https://supertype.ai/notes/django-rest-custom-permissions/
+- https://stackoverflow.com/questions/41273034/implement-roles-in-django-rest-framework
+- https://pypi.org/project/rest-framework-roles/
+- https://pdipesh.medium.com/django-rest-framework-permissions-example-8ed9809c432d
