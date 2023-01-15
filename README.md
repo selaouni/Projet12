@@ -64,14 +64,18 @@ Nota :
     - IDE utilisé: pycharm V2022.2.1 (Community Edition)
 
 
-## Historique des Versions:    
+## Historique des Versions: 
 
  *Principales versions sous Github*
-
- - PEP8 verification - --/01/2023
- - update
-
- - First version - 28/12/2022
+ - jwt authentication serializer code - 11/01/2023
+ - url.py by application - 11/01/2023
+ - updated with "author_user_id" attribut for Client , Contract and Event models - 11/01/2023
+ - First version of permissions - 04/01/2023
+ - Updated with admin django customisation - 04/01/2023
+ - Setting Update for DATABASE, REST_FRAMEWORK and AUTH_USER_MODEL - 02/01/2023
+ - Updated with new installations - 02/01/2023
+ - First application creation - 28/12/2022
+ - First django project version  - 28/12/2022
 
 ## Acknowledgments (code inspiration): 
 - https://olivierlemoigne.com/posts/django-postgres/
@@ -98,3 +102,4 @@ Nota :
 - https://stackoverflow.com/questions/41273034/implement-roles-in-django-rest-framework
 - https://pypi.org/project/rest-framework-roles/
 - https://pdipesh.medium.com/django-rest-framework-permissions-example-8ed9809c432d
+- https://stackoverflow.com/questions/51048348/adding-a-user-to-a-group-using-django-rest-framework-programmatically
