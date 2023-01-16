@@ -8,7 +8,8 @@ django.setup()
 
 
 GROUPS = ['IsAdmin', 'IsSupport', 'IsSales']
-MODELS = ['Support', 'Sales']
+MODELS = ['User', 'Support', 'Sales']
+
 
 for group in GROUPS:
     new_group, created = Group.objects.get_or_create(name=group)
