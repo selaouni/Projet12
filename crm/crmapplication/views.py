@@ -1,9 +1,11 @@
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
-from .permissions import IsOwnerOrReadOnly, IsAdminUser,  IsManager, IsSales, IsSupport
+from .permissions import IsAdminUser,  IsManager, IsSales, IsSupport, CheckPermission
 from django.db.models import Q
+import logging
 
+logger = logging.getLogger(__name__)
 
 from .models import Client, Contract, Event, Event_status, Sales,Support
 from .serializers import ClientSerializer
@@ -11,14 +13,18 @@ from .serializers import ContractSerializer, EventSerializer
 from .serializers import SalesSerializer, SupportSerializer
 
 
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)s.%(funcName)s +%(lineno)s: %(levelname)-8s [%(process)d] %(message)s',
+                    )
 class ClientViewset(ModelViewSet):
-    # permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
-    permission_classes = [(IsAdminUser | IsAuthenticated) & (IsSales | IsSupport)]
+    logger.error('Something went wrong!')
+    permission_classes = [IsAuthenticated, CheckPermission]
 
 
     serializer_class = ClientSerializer
 
     def get_queryset(self, *args, **kwargs):
+
         # Nous récupérons tous les produits dans une variable nommée queryset
         # user = self.request.user
         queryset = Client.objects.all()
@@ -32,6 +38,7 @@ class ClientViewset(ModelViewSet):
         return queryset
 
     def put_queryset(self, request, pk):
+        logger.error('Something went wrong!')
         queryset = self.get_object(pk)
         serializer = ClientSerializer(queryset, data=request.data)
         if serializer.is_valid():
@@ -40,6 +47,7 @@ class ClientViewset(ModelViewSet):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete_queryset(self):
+        logger.error('Something went wrong!')
         queryset = self.get_object()
         queryset.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
@@ -49,7 +57,8 @@ class ClientViewset(ModelViewSet):
 
 
 class EventViewset(ModelViewSet):
-    permission_classes = [(IsAdminUser | IsAuthenticated) & (IsSales | IsSupport)]
+    logger.error('Something went wrong!')
+    permission_classes = [IsAuthenticated, CheckPermission]
     serializer_class = EventSerializer
 
     def get_queryset(self, *args, **kwargs):
@@ -64,6 +73,7 @@ class EventViewset(ModelViewSet):
         return queryset
 
     def put_queryset(self, request, pk):
+
         queryset = self.get_object(pk)
         serializer = EventSerializer(queryset, data=request.data)
         if serializer.is_valid():
@@ -81,8 +91,8 @@ class EventViewset(ModelViewSet):
 
 
 class ContractViewset(ModelViewSet):
-    permission_classes = [(IsAdminUser | IsAuthenticated) & (IsSales | IsSupport)]
-    # permission_classes = [And(Or(IsAdminUser, IsAuthenticated), IsOwnerOrReadOnly)]
+    logger.error('Something went wrong!')
+    permission_classes = [IsAuthenticated, CheckPermission]
     serializer_class = ContractSerializer
 
     def get_queryset(self, *args, **kwargs):
@@ -103,7 +113,7 @@ class ContractViewset(ModelViewSet):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete_queryset(self, format=None):
+    def delete_queryset(self):
         queryset = self.get_object()
         queryset.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
