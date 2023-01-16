@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import logging
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -136,6 +138,14 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
 }
 
+# REST_FRAMEWORK_ROLES = {
+#   'ROLES': 'myproject.roles.ROLES',
+#   'SKIP_MODULES': [
+#     'django.*',
+#     'crm.crmapplication',
+#   ],
+# }
+
 #
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': [
@@ -155,3 +165,22 @@ REST_FRAMEWORK = {
 # }
 
 AUTH_USER_MODEL = 'authentication.User'
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'filename': 'desktop/Formation Python OC/Projets/projet12/epic-events/debug.log',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }
