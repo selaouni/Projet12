@@ -1,7 +1,13 @@
 from rest_framework.serializers import ModelSerializer
 from .models import Client, Event, Contract, Event_status, Sales, Support
+import logging
+
+logger = logging.getLogger(__name__)
 
 
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)s.%(funcName)s +%(lineno)s: %(levelname)-8s [%(process)d] %(message)s',
+                    )
 
 class ClientSerializer(ModelSerializer):
     class Meta:
