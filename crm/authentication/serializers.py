@@ -4,8 +4,14 @@ from .models import User
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 from rest_framework.serializers import ModelSerializer
+import logging
+
+logger = logging.getLogger(__name__)
 
 
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)s.%(funcName)s +%(lineno)s: %(levelname)-8s [%(process)d] %(message)s',
+                    )
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
